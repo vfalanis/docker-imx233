@@ -23,8 +23,5 @@ ln -s $OPTDIR/elftosb-10.12.01/bld/linux/elftosb2 /usr/sbin
 # Download imx-bootlets
 git clone https://github.com/RobertCNelson/imx-bootlets.git $HOMEDIR/imx-bootlets
 
-# Download linux-imx source
-git clone https://github.com/Freescale/linux-fslc.git $HOMEDIR/linux-fslc
-
 # Download linux-fslc source
-git clone https://github.com/varigit/linux-imx.git $HOMEDIR/linux-imx
+git clone https://github.com/Freescale/linux-fslc.git $HOMEDIR/linux-fslc
