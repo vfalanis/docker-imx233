@@ -9,7 +9,7 @@ wget https://launchpad.net/gcc-arm-embedded/4.7/4.7-2013-q3-update/+download/gcc
 tar xjf gcc-arm-none-eabi-4_7-2013q3-20130916-linux.tar.bz2 -C $OPTDIR
 
 ## Add toolachain to PATH
-echo 'export PATH=/root/gcc-arm-none-eabi-4_7-2013q3/bin:$PATH' >> $HOMEDIR/.bashrc
+echo 'export PATH=/opt/gcc-arm-none-eabi-4_7-2013q3/bin:$PATH' >> $HOMEDIR/.bashrc
 source $HOMEDIR/.bashrc
 
 # Download and compile elftosb tool
@@ -22,9 +22,10 @@ ln -s $OPTDIR/elftosb-10.12.01/bld/linux/elftosb2 /usr/sbin
 
 # Download imx-bootlets
 git clone https://github.com/RobertCNelson/imx-bootlets.git $HOMEDIR/imx-bootlets
+cd $HOMEDIR/imx-bootlets && wget https://raw.githubusercontent.com/koliqi/imx23-olinuxino/master/boot/imx23_olinuxino_bootlets.patch
+patch -p1 < imx23_olinuxino_bootlets.patch
+# Download linux kernel source
+git clone --branch linux-4.16.y --single-branch git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git $HOMEDIR/linux-stable
 
-# Download linux-imx source
-git clone https://github.com/Freescale/linux-fslc.git $HOMEDIR/linux-fslc
-
-# Download linux-fslc source
-git clone https://github.com/varigit/linux-imx.git $HOMEDIR/linux-imx
+# Download buildroot
+git clone git://git.busybox.net/buildroot $HOMEDIR/buildroot

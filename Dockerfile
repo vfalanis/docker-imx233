@@ -5,7 +5,8 @@ ENV HOME /root
 WORKDIR /root
 
 RUN apt-get update && apt-get install -y \
-    git \
+    software-properties-common \
+    python-software-properties \
     gcc \
     g++ \
     make \
@@ -13,7 +14,14 @@ RUN apt-get update && apt-get install -y \
     bzip2 \
     ssh \
     nano \
+    flex \
+    bison \
+    bc \
+    libssl-dev \
     gcc-multilib
+
+RUN add-apt-repository -y ppa:git-core/ppa
+RUN apt-get update && apt-get install -y git
 
 COPY install.sh $HOMEDIR/install.sh
 RUN chmod +x $HOMEDIR/install.sh
