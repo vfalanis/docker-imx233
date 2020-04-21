@@ -10,7 +10,8 @@ This repo contains an Ubuntu-based environment for building NXP i.MX233 Linux im
 - gcc-arm-none-eabi toolchain version 4.7
 - NXP elftosb2 tool
 - imx-bootlets
-- linux-fslc kernel source
+- linux 4.16.x kernel source
+- buildroot
 
 ## Use
 TBC
