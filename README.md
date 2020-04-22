@@ -13,7 +13,7 @@ This repo contains an Ubuntu-based environment for building NXP i.MX233 Linux im
 - Linux 4.16.x kernel source
 - buildroot
 
-## Use
+## How to use the container
 The container includes kernel source version 4.16.x in /root/linux-stable directory.
 
 ```
